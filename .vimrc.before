@@ -1,0 +1,134 @@
+" Modeline and Notes {
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldmethod=marker spell:
+"
+"                   _-.                       .-_
+"                 _..-'(                       )`-.._
+"              ./'. '||\\.       (\_/)       .//||` .`\.
+"           ./'.|'.'||||\\|..    )*.*(    ..|//||||`.`|.`\.
+"        ./'..|'.|| |||||\```````  "  '''''''/||||| ||.`|..`\.
+"      ./'.||'.|||| ||||||||||||.     .|||||||||||| ||||.`||.`\.
+"     /'|||'.|||||| ||||||||||||{     }|||||||||||| ||||||.`|||`\
+"    '.|||'.||||||| ||||||||||||{     }|||||||||||| |||||||.`|||.`
+"   '.||| ||||||||| |/'   ``\||/`     '\||/''   `\| ||||||||| |||.`
+"   |/' \./'     `\./          |/\   /\|          \./'     `\./ `\|
+"   V    V         V          }' `\ /' `{          V         V    V
+"   `    `         `               U               '         '
+" ___
+"(  _`\                    ( )
+"| (_) ) _ __   __     _ _ | |/')    __   _ __  ______  _   _ (_)  ___ ___
+"|  _ <'( '__)/'__`\ /'_` )| , <   /'__`\( '__)(______)( ) ( )| |/' _ ` _ `\
+"| (_) )| |  (  ___/( (_| || |\`\ (  ___/| |           | \_/ || || ( ) ( ) |
+"(____/'(_)  `\____)`\__,_)(_) (_)`\____)(_)           `\___/'(_)(_) (_) (_)
+"
+"   This is the personal .vimrc file of Breaker.
+"   While much of it is beneficial for general use, I would
+"   recommend picking out the parts you want and understand.
+"
+"   You can find me at http://0x7c00.cn
+"
+"   Copyright 2017 Breaker
+"
+"   Licensed under the Apache License, Version 2.0 (the "License");
+"   you may not use this file except in compliance with the License.
+"   You may obtain a copy of the License at
+"
+"       http://www.apache.org/licenses/LICENSE-2.0
+"
+"   Unless required by applicable law or agreed to in writing, software
+"   distributed under the License is distributed on an "AS IS" BASIS,
+"   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+"   See the License for the specific language governing permissions and
+"   limitations under the License.
+" }
+
+
+" Breaker options {
+
+    " Prevent automatically changing to open file directory
+    "   let g:breaker_no_autochdir = 1
+
+    " Disable views
+    "   let g:breaker_no_views = 1
+
+    " Leader keys
+    "   let g:breaker_leader='\'
+    "   let g:breaker_localleader='_'
+
+    " Disable easier moving in tabs and windows
+    "   let g:breaker_no_easyWindows = 1
+
+    " Disable wrap relative motion for start/end line motions
+    "   let g:breaker_no_wrapRelMotion = 1
+
+    " Disable fast tab navigation
+    "   let g:breaker_no_fastTabs = 1
+
+    " Clear search highlighting
+    "   let g:breaker_clear_search_highlight = 1
+
+    " Disable neosnippet expansion
+    " This maps over <C-k> and does some Supertab
+    " emulation with snippets
+    "   let g:breaker_no_neosnippet_expand = 1
+
+    " Disable whitespace stripping
+    "   let g:breaker_keep_trailing_whitespace = 1
+
+    " Enable powerline symbols
+    "   let g:airline_powerline_fonts = 1
+
+    " vim files directory
+    "   let g:breaker_consolidated_directory = <full path to desired directory>
+    "   eg: let g:breaker_consolidated_directory = $HOME . '/.vim/'
+
+    " This makes the completion popup strictly passive.
+    " Keypresses acts normally. <ESC> takes you of insert mode, words don't
+    " automatically complete, pressing <CR> inserts a newline, etc. Iff the
+    " menu is open, tab will cycle through it. If a snippet is selected, <C-k>
+    " expands it and jumps between fields.
+    "   let g:breaker_noninvasive_completion = 1
+
+    " Don't turn conceallevel or concealcursor
+    "   let g:breaker_no_conceal = 1
+
+    " For some colorschemes, autocolor will not work (eg: 'desert', 'ir_black')
+    " Indent guides will attempt to set your colors smartly. If you
+    " want to control them yourself, do it here.
+    "   let g:indent_guides_auto_colors = 0
+    "   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=233
+    "   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#404040 ctermbg=234
+
+    " Leave the default font and size in GVim
+    " To set your own font, do it from ~/.vimrc.local
+    "   let g:breaker_no_big_font = 1
+
+    " Disable  omni complete
+    "   let g:breaker_no_omni_complete = 1
+
+    " Don't create default mappings for multicursors
+    " See :help multiple-cursors-mappings
+    "   let g:multi_cursor_use_default_mapping=0
+    "   let g:multi_cursor_next_key='<C-n>'
+    "   let g:multi_cursor_prev_key='<C-p>'
+    "   let g:multi_cursor_skip_key='<C-x>'
+    "   let g:multi_cursor_quit_key='<Esc>'
+    " Require a special keypress to enter multiple cursors mode
+    "   let g:multi_cursor_start_key='+'
+
+    " Mappings for editing/applying Breaker config
+    "   let g:breaker_edit_config_mapping='<leader>ev'
+    "   let g:breaker_apply_config_mapping='<leader>sv'
+
+" }
+
+" Use fork before if available {
+    if filereadable(expand("~/.vimrc.before.fork"))
+        source ~/.vimrc.before.fork
+    endif
+" }
+
+" Use local before if available {
+    if filereadable(expand("~/.vimrc.before.local"))
+        source ~/.vimrc.before.local
+    endif
+" }
