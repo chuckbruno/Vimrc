@@ -61,6 +61,7 @@ set t_Co=256
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+set pythonthreedll = python36.dll
 
 if !WINDOWS()
     set shell=/bin/sh
@@ -91,6 +92,8 @@ endif
 
 " General {
 
+inoremap <C-e> <C-o>$
+inoremap <C-a> <C-o>0
 
 " call plug#begin()
 " Plug 'vim-airline/vim-airline'
