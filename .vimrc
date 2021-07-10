@@ -159,7 +159,7 @@ set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 set virtualedit=onemore             " Allow for cursor beyond last character
 set history=1000                    " Store a ton of history (default is 20)
-"set spell                           " Spell checking on
+" set spell                           " Spell checking on
 set hidden                          " Allow buffer switching without saving
 set iskeyword-=.                    " '.' is an end of word designator
 set iskeyword-=#                    " '#' is an end of word designator
@@ -434,8 +434,11 @@ nmap <leader>f6 :set foldlevel=6<CR>
 nmap <leader>f7 :set foldlevel=7<CR>
 nmap <leader>f8 :set foldlevel=8<CR>
 nmap <leader>f9 :set foldlevel=9<CR>
-nmap <C-j> :m-2<CR>  
-nmap <C-k> :m+1<CR>
+
+" noremap <c-s-up> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
+" noremap <c-s-down> ddp
+nmap <C-j> mz:m+<cr>`z
+nmap <C-k> mz:m-2<cr>`z
 
 " Most prefer to toggle search highlighting rather than clear the current
 " search results. To clear search highlighting rather than toggle it on
@@ -755,6 +758,8 @@ if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
 endif
 "}
 
+Plugin 'Valloric/YouCompleteMe’
+
 " YouCompleteMe {
 if count(g:breaker_bundle_groups, 'youcompleteme')
     let g:acp_enableAtStartup = 0
@@ -763,8 +768,8 @@ if count(g:breaker_bundle_groups, 'youcompleteme')
     let g:ycm_collect_identifiers_from_tags_files = 1
 
     " remap Ultisnips for compatibility for YCM
-    let g:UltiSnipsExpandTrigger = '<C-j>'
-    let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+    " let g:UltiSnipsExpandTrigger = '<C-j>'
+    " let g:UltiSnipsJumpForwardTrigger = '<C-j>'
     let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
     " Enable omni completion.
@@ -796,6 +801,7 @@ if count(g:breaker_bundle_groups, 'youcompleteme')
     set completeopt-=preview
 endif
 " }
+
 
 " neocomplete {
 if count(g:breaker_bundle_groups, 'neocomplete')
