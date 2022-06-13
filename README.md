@@ -14,6 +14,12 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 安装完Terminal，就是一些列的配置了，首先安装posh-git
 
+```bas
+Install-Module posh-git
+Install-Module oh-my-posh
+
+```
+
 然后再安装oh-my-posh，这个和知乎上写得都不一样，安装方式已经改了，再下面这个链接上有详细的说明
 
 ```bash
